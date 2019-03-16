@@ -2,7 +2,8 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2019 The Phore Developers
+// Copyright (c) 2019 The SuperBanana Developers
+// Copyright (c) 2019 The MANO Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -265,10 +266,10 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Phore server.");
+            "\nStop MANO server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Phore server stopping";
+    return "MANO server stopping";
 }
 
 
@@ -352,38 +353,38 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Phore features */
-        {"phore", "masternode", &masternode, true, true, false},
-        {"phore", "listmasternodes", &listmasternodes, true, true, false},
-        {"phore", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
-        {"phore", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
-        {"phore", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
-        {"phore", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"phore", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"phore", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"phore", "masternodedebug", &masternodedebug, true, true, false},
-        {"phore", "startmasternode", &startmasternode, true, true, false},
-        {"phore", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"phore", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"phore", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"phore", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"phore", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"phore", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"phore", "mnbudget", &mnbudget, true, true, false},
-        {"phore", "preparebudget", &preparebudget, true, true, false},
-        {"phore", "submitbudget", &submitbudget, true, true, false},
-        {"phore", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"phore", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"phore", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"phore", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"phore", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"phore", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"phore", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"phore", "checkbudgets", &checkbudgets, true, true, false},
-        {"phore", "mnsync", &mnsync, true, true, false},
-        {"phore", "spork", &spork, true, true, false},
-        {"phore", "getpoolinfo", &getpoolinfo, true, true, false},
-        {"phore", "makekeypair", &makekeypair, true, true, false},
+        /* MANO features */
+        {"mano", "masternode", &masternode, true, true, false},
+        {"mano", "listmasternodes", &listmasternodes, true, true, false},
+        {"mano", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"mano", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"mano", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
+        {"mano", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"mano", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"mano", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"mano", "masternodedebug", &masternodedebug, true, true, false},
+        {"mano", "startmasternode", &startmasternode, true, true, false},
+        {"mano", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"mano", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"mano", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"mano", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"mano", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"mano", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"mano", "mnbudget", &mnbudget, true, true, false},
+        {"mano", "preparebudget", &preparebudget, true, true, false},
+        {"mano", "submitbudget", &submitbudget, true, true, false},
+        {"mano", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"mano", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"mano", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"mano", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"mano", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"mano", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"mano", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"mano", "checkbudgets", &checkbudgets, true, true, false},
+        {"mano", "mnsync", &mnsync, true, true, false},
+        {"mano", "spork", &spork, true, true, false},
+        {"mano", "getpoolinfo", &getpoolinfo, true, true, false},
+        {"mano", "makekeypair", &makekeypair, true, true, false},
 #ifdef ENABLE_WALLET
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
@@ -450,8 +451,8 @@ static const CRPCCommand vRPCCommands[] =
         {"zerocoin", "exportzerocoins", &exportzerocoins, false, false, true},
         {"zerocoin", "reconsiderzerocoins", &reconsiderzerocoins, false, false, true},
         {"zerocoin", "getspentzerocoinamount", &getspentzerocoinamount, false, false, false},
-        {"zerocoin", "getzphrseed", &getzphrseed, false, false, true},
-        {"zerocoin", "setzphrseed", &setzphrseed, false, false, true}
+        {"zerocoin", "getzmanoseed", &getzmanoseed, false, false, true},
+        {"zerocoin", "setzmanoseed", &setzmanoseed, false, false, true}
 
 #endif // ENABLE_WALLET
 };
@@ -615,7 +616,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> phore-cli " + methodname + " " + args + "\n";
+    return "> mano-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)

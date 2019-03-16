@@ -4,8 +4,6 @@
 todo.txt
 reset-files.bash
 
-*.tar.gz
-
 *.exe
 src/phore
 src/phored
@@ -71,7 +69,6 @@ src/leveldb/build_config.mk
 
 *.log
 *.trs
-*.dmg
 
 *.json.h
 !accumulatorcheckpoints.json.h

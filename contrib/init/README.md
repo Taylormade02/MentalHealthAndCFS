@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: phored.service
-Upstart: phored.conf
-OpenRC:  phored.openrc
-         phored.openrcconf
-CentOS:  phored.init
+SystemD: manod.service
+Upstart: manod.conf
+OpenRC:  manod.openrc
+         manod.openrcconf
+CentOS:  manod.init
 
 have been made available to assist packagers in creating node packages here.
 

@@ -1,6 +1,7 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2019 The Phore Developers
+// Copyright (c) 2019 The SuperBanana Developers
+// Copyright (c) 2019 The MANO Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -67,8 +68,8 @@ bool IsBudgetCollateralValid(uint256 nTxCollateralHash, uint256 nExpectedHash, s
         }
         if (fBudgetFinalization) {
             // Collateral for budget finalization
-            // Note: there are still old valid budgets out there, but the check for the new 25 PHR finalization collateral
-            //       will also cover the old 50 PHR finalization collateral.
+            // Note: there are still old valid budgets out there, but the check for the new 25 MANO finalization collateral
+            //       will also cover the old 50 MANO finalization collateral.
             LogPrint("mnbudget", "Final Budget: o.scriptPubKey(%s) == findScript(%s) ?\n", o.scriptPubKey.ToString(), findScript.ToString());
             if (o.scriptPubKey == findScript) {
                 LogPrint("mnbudget", "Final Budget: o.nValue(%ld) >= BUDGET_FEE_TX(%ld) ?\n", o.nValue, GetBudgetSystemCollateralAmount(chainActive.Height()));
@@ -913,15 +914,27 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
         return ((nSubsidy / 100) * 10) * 146;
     }
 
-    if (nHeight > 200 && nHeight <= 250000) {
-        return 0.77 * COIN * 1440 * 30;
+    if (nHeight > 200 && nHeight <= 66240) {
+        return 0.1 * COIN * 1440 * 30;
     }
 
-    if (nHeight > 250000 && nHeight <= 691300) {
+    if (nHeight > 66240 && nHeight <= 462240) {
         return 1 * COIN * 1440 * 30;
     }
-    
-    return 3 * COIN * 1440 * 30;
+
+    if (nHeight > 462240 && nHeight <= 989280) {
+        return 0.8 * COIN * 1440 * 30;
+    }
+
+    if (nHeight > 989280 && nHeight <= 1514880) {
+        return 0.4 * COIN * 1440 * 30;
+    }
+
+    if (nHeight > 1514880 && nHeight <= 2040480) {
+        return 0.2 * COIN * 1440 * 30;
+    }
+
+    return 0.1 * COIN * 1440 * 30;
 }
 
 void CBudgetManager::NewBlock()

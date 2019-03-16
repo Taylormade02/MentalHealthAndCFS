@@ -20,18 +20,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(PHR);
-    unitlist.append(mPHR);
-    unitlist.append(uPHR);
+    unitlist.append(MANO);
+    unitlist.append(mMANO);
+    unitlist.append(uMANO);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case PHR:
-    case mPHR:
-    case uPHR:
+    case MANO:
+    case mMANO:
+    case uMANO:
         return true;
     default:
         return false;
@@ -41,12 +41,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case PHR:
-        return QString("phore");
-    case mPHR:
-        return QString("mphore");
-    case uPHR:
-        return QString::fromUtf8("uphore");
+    case MANO:
+        return QString("mano");
+    case mMANO:
+        return QString("mmano");
+    case uMANO:
+        return QString::fromUtf8("umano");
     default:
         return QString("???");
     }
@@ -56,23 +56,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case PHR:
-            return QString("PHR");
-        case mPHR:
-            return QString("mPHR");
-        case uPHR:
-            return QString::fromUtf8("μPHR");
+        case MANO:
+            return QString("MANO");
+        case mMANO:
+            return QString("mMANO");
+        case uMANO:
+            return QString::fromUtf8("μMANO");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case PHR:
-            return QString("tPHR");
-        case mPHR:
-            return QString("mtPHR");
-        case uPHR:
-            return QString::fromUtf8("μtPHR");
+        case MANO:
+            return QString("tMANO");
+        case mMANO:
+            return QString("mtMANO");
+        case uMANO:
+            return QString::fromUtf8("μtMANO");
         default:
             return QString("???");
         }
@@ -83,23 +83,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case PHR:
-            return QString("PHR");
-        case mPHR:
-            return QString("Milli-PHR (1 / 1" THIN_SP_UTF8 "000)");
-        case uPHR:
-            return QString("Micro-PHR (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case MANO:
+            return QString("MANO");
+        case mMANO:
+            return QString("Milli-MANO (1 / 1" THIN_SP_UTF8 "000)");
+        case uMANO:
+            return QString("Micro-MANO (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case PHR:
-            return QString("TestPHRs");
-        case mPHR:
-            return QString("Milli-TestPHR (1 / 1" THIN_SP_UTF8 "000)");
-        case uPHR:
-            return QString("Micro-TestPHR (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case MANO:
+            return QString("TestMANOs");
+        case mMANO:
+            return QString("Milli-TestMANO (1 / 1" THIN_SP_UTF8 "000)");
+        case uMANO:
+            return QString("Micro-TestMANO (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -109,11 +109,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case PHR:
+    case MANO:
         return 100000000;
-    case mPHR:
+    case mMANO:
         return 100000;
-    case uPHR:
+    case uMANO:
         return 100;
     default:
         return 100000000;
@@ -123,11 +123,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case PHR:
+    case MANO:
         return 8;
-    case mPHR:
+    case mMANO:
         return 5;
-    case uPHR:
+    case uMANO:
         return 2;
     default:
         return 0;

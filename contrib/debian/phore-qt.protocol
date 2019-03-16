@@ -1,6 +1,6 @@
 [Protocol]
-exec=phore-qt '%u'
-protocol=phore
+exec=mano-qt '%u'
+protocol=mano
 input=none
 output=none
 helper=true

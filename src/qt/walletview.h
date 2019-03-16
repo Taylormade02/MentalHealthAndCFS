@@ -15,7 +15,6 @@ class BitcoinGUI;
 class ClientModel;
 class OverviewPage;
 class ReceiveCoinsDialog;
-class PrivacyDialog;
 class SendCoinsDialog;
 class SendCoinsRecipient;
 class TransactionView;
@@ -65,7 +64,6 @@ private:
     OverviewPage* overviewPage;
     QWidget* transactionsPage;
     ReceiveCoinsDialog* receiveCoinsPage;
-    PrivacyDialog* privacyPage;
     SendCoinsDialog* sendCoinsPage;
     BlockExplorer* explorerWindow;
     MasternodeList* masternodeListPage;
@@ -85,8 +83,6 @@ public slots:
     void gotoMasternodePage();
     /** Switch to explorer page */
     void gotoBlockExplorerPage();
-    /** Switch to privacy page */
-    void gotoPrivacyPage();
     /** Switch to proposal page */
     void gotoProposalPage();	
     /** Switch to receive coins page */
@@ -133,7 +129,7 @@ public slots:
     /** Show progress dialog e.g. for rescan */
     void showProgress(const QString& title, int nProgress);
 
-    /** Update selected PHR amount from transactionview */
+    /** Update selected MANO amount from transactionview */
     void trxAmount(QString amount);
 
 signals:
