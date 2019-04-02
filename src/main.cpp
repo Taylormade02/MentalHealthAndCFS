@@ -2165,13 +2165,13 @@ int64_t GetBlockValue(int nHeight)
         return 2000000 * COIN;
     } else if (nHeight > 0 && nHeight <= 66240) {
         return 1 * COIN;
-    } else if (nHeight > 66240 && nHeight <= 462240) {
+    } else if (nHeight >= 66241 && nHeight <= 462240) {
         return 10 * COIN;
-    } else if (nHeight > 462240 && nHeight <= 989280) {
+    } else if (nHeight >= 462241 && nHeight <= 989280) {
         return 8 * COIN;
-    } else if (nHeight > 989280 && nHeight <= 1514880) {
+    } else if (nHeight >= 989281 && nHeight <= 1514880) {
         return 4 * COIN;
-    } else if (nHeight > 1514880 && nHeight <= 2040480) {
+    } else if (nHeight >= 1514881 && nHeight <= 2040480) {
         return 2 * COIN;
     } else {
         return 1 * COIN;
