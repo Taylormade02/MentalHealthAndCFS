@@ -1,3 +1,12 @@
+I have just created Mental Health and CFS this is a fork of the Mano blockchain.
+I have created this to raise the Awerness of Mental Health and CFS (chronic Fatigue syndrome)
+The plan is to raise money to support and help people\groups that are researching for answers on Mental Health and CFS.
+This is just in the start phase. I am learning everyday to make this better. 
+I hope for some good support to get this project going. So we can help all the people that are struggeling.
+
+
+
+
 MANO Core integration/staging repository
 =====================================
 
